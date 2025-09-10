@@ -1,0 +1,159 @@
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #0d1117;
+    color: #d0e6ff;
+    line-height: 1.6;
+}
+
+/* Navbar (full width) */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #111;
+    z-index: 1000;
+    padding: 15px 40px;
+    height: 64px;
+}
+.box-link {
+  text-decoration: none;   /* removes underline */
+  color: inherit;          /* inherits the text color of the parent */
+  display: block;          /* makes the <a> behave like a block container */
+}
+
+.box-link:visited {
+  color: inherit;          /* stops purple text after clicking */
+}
+
+.box-link:hover {
+  color: inherit;          /* keeps text color the same on hover */
+}
+
+.box-link:active {
+  color: inherit;          /* prevents red text when clicking */
+}
+
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    font-weight: 700;
+    color: #3da9fc;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0ch; /* expanded with GSAP */
+    border-right: 2px solid #3da9fc;
+    z-index: 1100;
+}
+
+/* Nav links */
+.nav-links {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 1100;
+}
+.nav-links a {
+    color: #d0e6ff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+.nav-links a:hover { color: #3da9fc; }
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1200;
+    background: none;
+    border: none;
+}
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #d0e6ff;
+    border-radius: 2px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .navbar { padding: 12px 20px; height: auto; }
+
+    .logo {
+    position: static;
+    width: auto !important;
+    border-right: none !important;
+    display: inline-block;
+    transform: none;
+    }
+
+    .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #111;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+    width: 220px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    display: none;
+    }
+    .nav-links.open { display: flex; }
+
+    .hamburger { display: flex; }
+}
+
+/* Content */
+.home { padding-top: 100px; text-align: center; }
+.home h1 { font-size: 36px; margin-bottom: 40px; color: #3da9fc; }
+
+.boxes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+.box {
+    width: 250px;
+    padding: 20px;
+    background: rgba(20,20,30,0.9);
+    border: 1px solid rgba(61,169,252,0.3);
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(61,169,252,0.3);
+}
+
+.contact { margin-top: 40px; font-size: 18px; text-align: center; }
+.contact-links { margin-top: 15px; display: flex; gap: 20px; justify-content: center; }
+.contact-links a { text-decoration: none; color: #2d8dfc; font-weight: bold; transition: color 0.3s; }
+.contact-links a:hover { color: #5ab4ff; }
