@@ -153,6 +153,7 @@ body {
   padding: 0 20px;
   margin: 0 auto;
   justify-items: center; /* makes centering easier */
+  justify-content: center;
 }
 
 .photo-grid figure {
